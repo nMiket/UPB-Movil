@@ -23,26 +23,26 @@ View your app in AI Studio: https://ai.studio/apps/61448974-4ef1-4082-af6d-6661f
 
 **Prerequisites:** Node.js, Android Studio + Android SDK, Java 17
 
-> Nota: Si solo tienes el repositorio en la nube (por ejemplo, un fork en GitHub), necesitas un entorno con Android SDK para compilar. Usa una máquina local, VM o un entorno tipo Codespaces/Actions con acceso a Internet a **dl.google.com**.
+> Note: If you only have the repo in the cloud (for example, a GitHub fork), you still need an environment with the Android SDK to build the APK. Use a local machine, VM, or an environment like Codespaces/Actions with access to **dl.google.com**.
 
-1. Prepara el entorno:
-   - Instala Node.js LTS y Java 17.
-   - Instala Android Studio (incluye Android SDK).
-   - Abre **SDK Manager** y verifica: Android SDK Platform (API recomendada), Build-Tools y Command-line Tools.
-2. Clona el fork y entra al proyecto:
-   `git clone <URL_DEL_FORK> && cd UPB-Movil`
-3. Instala dependencias:
+1. Prepare the environment:
+   - Install Node.js LTS and Java 17.
+   - Install Android Studio (includes Android SDK).
+   - Open **SDK Manager** and verify: Android SDK Platform (recommended API), Build-Tools, and Command-line Tools.
+2. Clone the fork and enter the project:
+   `git clone <FORK_URL> && cd UPB-Movil`
+3. Install dependencies:
    `npm install`
-4. Compila la web para producción:
+4. Build the web app for production:
    `npm run build`
-5. Sincroniza los assets web con Android:
+5. Sync web assets to Android:
    `npx cap sync android`
-6. Construye el APK:
-   - Con Android Studio: `npx cap open android` y compila desde el IDE
-   - Por CLI (debug APK): `cd android && ./gradlew assembleDebug`
-7. Verifica la salida:
+6. Build the APK:
+   - With Android Studio: `npx cap open android` and build from the IDE
+   - From CLI (debug APK): `cd android && ./gradlew assembleDebug`
+7. Verify the output:
    `android/app/build/outputs/apk/debug/app-debug.apk`
 
-Si el build falla por dependencias, confirma que el entorno tiene acceso a **dl.google.com** o usa un cache local de Maven/Gradle con los plugins necesarios.
+If the build fails due to dependencies, confirm the environment has access to **dl.google.com** or use a local Maven/Gradle cache with the required plugins.
 
 If you need to change the Android package ID or app name, update `capacitor.config.ts` and re-run `npx cap sync android`.
