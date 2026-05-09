@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">UPB Movil</string>
+    <string name="title_activity_main">UPB Movil</string>
+    <string name="package_name">com.nmiket.upbmovil</string>
+    <string name="custom_url_scheme">com.nmiket.upbmovil</string>
+</resources>
