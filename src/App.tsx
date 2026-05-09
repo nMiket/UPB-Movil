@@ -46,6 +46,8 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Todo');
 
+  const categories = ['Todo', 'Almuerzos', 'Bebidas', 'Snacks'];
+
   useMemo(() => {
     // Simulate app boot
     const timer = setTimeout(() => setIsLaunching(false), 2500);
