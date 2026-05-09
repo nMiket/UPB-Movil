@@ -23,14 +23,26 @@ View your app in AI Studio: https://ai.studio/apps/61448974-4ef1-4082-af6d-6661f
 
 **Prerequisites:** Node.js, Android Studio + Android SDK, Java 17
 
-1. Install dependencies:
+> Nota: Si solo tienes el repositorio en la nube (por ejemplo, un fork en GitHub), necesitas un entorno con Android SDK para compilar. Usa una máquina local, VM o un entorno tipo Codespaces/Actions con acceso a Internet a **dl.google.com**.
+
+1. Prepara el entorno:
+   - Instala Node.js LTS y Java 17.
+   - Instala Android Studio (incluye Android SDK).
+   - Abre **SDK Manager** y verifica: Android SDK Platform (API recomendada), Build-Tools y Command-line Tools.
+2. Clona el fork y entra al proyecto:
+   `git clone <URL_DEL_FORK> && cd UPB-Movil`
+3. Instala dependencias:
    `npm install`
-2. Build the web app:
+4. Compila la web para producción:
    `npm run build`
-3. Sync web assets to Android:
+5. Sincroniza los assets web con Android:
    `npx cap sync android`
-4. Build the APK:
-   - With Android Studio: `npx cap open android` and build/run from the IDE
-   - From CLI (debug APK): `cd android && ./gradlew assembleDebug`
+6. Construye el APK:
+   - Con Android Studio: `npx cap open android` y compila desde el IDE
+   - Por CLI (debug APK): `cd android && ./gradlew assembleDebug`
+7. Verifica la salida:
+   `android/app/build/outputs/apk/debug/app-debug.apk`
+
+Si el build falla por dependencias, confirma que el entorno tiene acceso a **dl.google.com** o usa un cache local de Maven/Gradle con los plugins necesarios.
 
 If you need to change the Android package ID or app name, update `capacitor.config.ts` and re-run `npx cap sync android`.
